@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-8">
+      <h1><span class="badge badge-dark" id="header">Trade Registration</span></h1>
+      <hr>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="firstName">Counterparty:</label>
+          </div>
+          <div class="col-md-6">
+            <select type="text" class="form-control" formControlName="IdCounterparty">
+              <option value="0">Select</option>
+              <option value="1">Company A</option>
+              <option value="2">Company B</option>
+            </select>
+            <div *ngIf="submitted && userForm.controls.IdCounterparty.errors" class="error">
+              <div *ngIf="userForm.controls.IdCounterparty.errors.required">Counterparty is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="firstName">Product:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="Product">
+            <div *ngIf="submitted && userForm.controls.Product.errors" class="error">
+              <div *ngIf="userForm.controls.Product.errors.required">Product is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="firstName">Quantity:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" formControlName="Quantity">
+            <div *ngIf="submitted && userForm.controls.Quantity.errors" class="error">
+              <div *ngIf="userForm.controls.Quantity.errors.required">Quantity is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="firstName">Price:</label>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" formControlName="Price">
+            <div *ngIf="submitted && userForm.controls.Price.errors" class="error">
+              <div *ngIf="userForm.controls.Price.errors.required">Price is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="firstName">Date:</label>
+          </div>
+          <div class="col-md-6">
+            
+            <input type="text" class="form-control" formControlName="Date">
+            <div *ngIf="submitted && userForm.controls.Date.errors" class="error">
+              <div *ngIf="userForm.controls.Date.errors.required">Date number is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <label for="firstName">Direction:</label>
+          </div>
+          <div class="col-md-6">
+            <label>
+              <input type="radio" class="form-control" value="0" formControlName="Direction" name="Direction">
+              Buy
+            </label>
+            <label style="margin-left:20px;">
+              <input type="radio" class="form-control" value="1" formControlName="Direction" name="Direction">
+              Sell
+            </label>
+            <div *ngIf="submitted && userForm.controls.MobileNo.errors" class="error">
+              <div *ngIf="userForm.controls.Direction.errors.required">Direction is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+           
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Submit</button> &nbsp;&nbsp;
+            <input type="button" class="btn btn-warning" (click)="Cancel()" value="Cancel">
+        </div>
+          </div>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,4 @@
+.ag-cell { 
+    overflow:visible; 
+  }
+  .ag-cell .dropdown{position:absolute;}
